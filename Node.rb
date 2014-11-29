@@ -1,5 +1,6 @@
 class Node
-  def initialize(data)
+  def initialize(id, data)
+    @id = id
     @data = data
   end
 end
