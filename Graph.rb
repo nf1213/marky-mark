@@ -1,16 +1,14 @@
 class Graph
   def initialize
-    @nodes = []
-    @edges = []
+    @nodes = {}
+    @edges = {}
   end
 
-  def add_node(id, data)
-    node = Node.new(id, data)
-    @nodes << node
+  def add_node(node)
+    @nodes[node.id] = node.data
   end
 
-  def add_edge(head_node, tail_node, id, data)
-    edge = Edge.new(head_node, tail_node, id, data)
-    @edges << edge
+  def add_edge(edge)
+    @edges[edge.id] = edge.data
   end
 end
