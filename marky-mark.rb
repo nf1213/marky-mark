@@ -54,6 +54,7 @@ def make_graph
   CSV.foreach('actors.csv') do |row|
     g.add_node(Node.new(row[0], row[1]))
   end
+
   CSV.foreach('movies.csv') do |row|
     connect_actors(cast[row[0]], row[0], row[1], g)
   end
@@ -63,6 +64,6 @@ end
 graph = make_graph
 graph.print_info
 
-graph.nodes['14'].edges.each do |edge|
-  puts "#{edge.head.data}, #{edge.tail.data}"
+graph.nodes['29'].edges.each do |edge|
+  puts "#{edge.head.data}, #{edge.tail.data}, #{edge.data}"
 end

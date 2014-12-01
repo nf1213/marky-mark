@@ -11,8 +11,6 @@ class Graph
 
   def add_edge(edge)
     @edges << edge
-    edge.head.add_edge(edge)
-    edge.tail.add_edge(edge)
   end
 
   def print_info
