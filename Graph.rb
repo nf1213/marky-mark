@@ -6,11 +6,11 @@ class Graph
   end
 
   def add_node(node)
-    @nodes[node.id] = node.data
+    @nodes[node.id] = node
   end
 
   def add_edge(edge)
-    @edges[edge.id] = edge.data
+    @edges[edge.id] = edge
   end
 
   def print_info
