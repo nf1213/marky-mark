@@ -1,4 +1,5 @@
 class Graph
+  attr_reader :edges, :nodes
   def initialize
     @nodes = {}
     @edges = {}
@@ -10,5 +11,10 @@ class Graph
 
   def add_edge(edge)
     @edges[edge.id] = edge.data
+  end
+
+  def print_info
+    puts "#{@nodes.size} nodes."
+    puts "#{@edges.size} edges."
   end
 end
