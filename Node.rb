@@ -1,13 +1,13 @@
 class Node
-  attr_reader :id, :data
+  attr_reader :id, :data, :edges
   def initialize(id, data)
     @id = id
     @data = data
-    @edges = {}
+    @edges = []
   end
 
   def add_edge(edge)
-    @edges[edge.id] = edge.data
+    @edges << edge
   end
 
   def print_info

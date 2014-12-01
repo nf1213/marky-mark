@@ -1,10 +1,10 @@
 class Edge
-  attr_reader :id, :data
+  attr_reader :data, :head, :id, :tail
   def initialize(head, tail, id, data)
     @head = head
     @tail = tail
-    @id = id
     @data = data
+    @id = id
     @head.add_edge(self)
     @tail.add_edge(self)
   end

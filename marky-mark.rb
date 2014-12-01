@@ -62,3 +62,7 @@ end
 
 graph = make_graph
 graph.print_info
+
+graph.nodes['14'].edges.each do |edge|
+  puts "#{edge.head.data}, #{edge.tail.data}"
+end
