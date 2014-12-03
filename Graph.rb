@@ -14,16 +14,12 @@ class Graph
     @edges << edge
   end
 
-  def closest_actor
-    @nodes.min_by { |id, actor| actor.distance }[1]
-  end
-
   def print_info
     puts "#{@nodes.size} nodes."
     puts "#{@edges.size} edges."
   end
 
   def find_actor_by_name(name)
-    nodes['15189']
+    nodes['170']
   end
 end

@@ -81,7 +81,7 @@ def dijkstra(graph, start, target)
       puts "s1: =#{s.id}"
       if s.distance + 1 < n.distance
         n.distance = s.distance + 1
-        n.previous = s.data
+        n.previous = s
         puts "got here: #{s.id}"
       end
       if n.id == t.id
