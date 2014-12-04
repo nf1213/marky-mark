@@ -20,6 +20,6 @@ class Graph
   end
 
   def find_actor_by_name(name)
-    nodes['170']
+    nodes['13984']
   end
 end

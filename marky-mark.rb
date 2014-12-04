@@ -73,31 +73,26 @@ def dijkstra(graph, start, target)
   unvisited = graph
   t = target
 
-  unless unvisited.empty?
+  until unvisited.empty?
     # s = unvisited[start.id]
     s = closest_actor(unvisited)
     puts s.id
     s.neighbors.each do |i, n|
-      puts "s1: =#{s.id}"
+      puts "Looking at nodes, this could take a while..."
+      puts "Current: #{s.id}"
       if s.distance + 1 < n.distance
         n.distance = s.distance + 1
         n.previous = s
-        puts "got here: #{s.id}"
       end
       if n.id == t.id
-        puts "and here"
+        puts n.data
         until n.previous.nil?
           puts n.previous.data
           n = n.previous
         end
         exit(1)
       else
-        puts "blah: #{s.id}"
-        n.neighbors.delete(s.id)
-        puts "deleting #{s.id}"
         unvisited.delete(s.id)
-        # puts "includes? #{unvisited.has_key?(s.id)}"
-        dijkstra(unvisited, n, t)
       end
     end
   end
@@ -107,12 +102,5 @@ end
 mrkymrk = graph.nodes['1841']
 mrkymrk.distance = 0
 target = graph.find_actor_by_name(target_actor)
-
-graph.nodes.each do |id, actor|
-  if id != actor.id
-    puts "something went wrong."
-    exit(1)
-  end
-end
 
 dijkstra(graph.nodes, mrkymrk, target)
