@@ -18,8 +18,4 @@ class Graph
     puts "#{@nodes.size} nodes."
     puts "#{@edges.size} edges."
   end
-
-  def find_actor_by_name(name)
-    nodes['13984']
-  end
 end

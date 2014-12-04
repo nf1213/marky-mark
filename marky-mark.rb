@@ -54,13 +54,6 @@ def make_graph
   g
 end
 
-if ARGV.length != 1
-  puts "usage: #{__FILE__} \"<actor name>\""
-  exit(1)
-end
-
-target_actor = ARGV[0]
-
 graph = make_graph
 
 
@@ -85,6 +78,7 @@ def dijkstra(graph, start, target)
         n.previous = s
       end
       if n.id == t.id
+        puts "HERE WE GO!\n\n"
         puts n.data
         until n.previous.nil?
           puts n.previous.data
@@ -98,9 +92,15 @@ def dijkstra(graph, start, target)
   end
 end
 
+if ARGV.length != 1
+  puts "usage: #{__FILE__} \"<actor id>\""
+  exit(1)
+end
+
+target_actor = ARGV[0]
 # Mark Wahlberg
 mrkymrk = graph.nodes['1841']
 mrkymrk.distance = 0
-target = graph.find_actor_by_name(target_actor)
+target = graph.nodes[target_actor]
 
 dijkstra(graph.nodes, mrkymrk, target)

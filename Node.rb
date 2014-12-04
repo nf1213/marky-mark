@@ -8,7 +8,7 @@ class Node
     @neighbors = {}
     @distance = Float::INFINITY
     # previous node in path to source
-    @previous = nil
+    @previous
   end
 
   def add_edge(edge)
