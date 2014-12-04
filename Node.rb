@@ -20,6 +20,16 @@ class Node
     end
   end
 
+  def find_edge(node, other_node)
+    edges.each do |edge|
+      if (edge.head == node && edge.tail == other_node) ||
+        (edge.tail == node && edge.head == other_node)
+        return edge
+      end
+    end
+    nil
+  end
+
   def print_info
     puts "This node has #{@edges.size} edges"
   end

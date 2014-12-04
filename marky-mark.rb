@@ -78,10 +78,11 @@ def dijkstra(graph, start, target)
         n.previous = s
       end
       if n.id == t.id
-        puts "HERE WE GO!\n\n"
-        puts n.data
+        puts "\nHERE WE GO!\n\n"
+        puts "Actor: #{n.data}"
         until n.previous.nil?
-          puts n.previous.data
+          puts "Movie: #{n.find_edge(n, n.previous).data}"
+          puts "Actor: #{n.previous.data}"
           n = n.previous
         end
         exit(1)
